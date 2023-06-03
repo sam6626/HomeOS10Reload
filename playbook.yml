@@ -1,0 +1,13 @@
+---
+- hosts: os10
+  gather_facts: False
+  collections: 
+     dellemc.os10
+       
+  tasks:    
+  - name: "Reload ONIE install"
+    os10_command:
+      commands: 
+       - command: reload
+         prompt: "Proceed to reboot the system"
+         answer: "yes"
